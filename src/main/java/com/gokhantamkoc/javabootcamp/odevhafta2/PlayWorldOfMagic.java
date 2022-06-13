@@ -1,5 +1,12 @@
 package com.gokhantamkoc.javabootcamp.odevhafta2;
 
+import static org.mockito.ArgumentMatchers.matches;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import java.util.Collections;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,12 +51,32 @@ public class PlayWorldOfMagic implements CommandLineRunner {
 		int spellsUsed = 0;
 		// ______ BASLANGIC _______ Kodunuz buradan baslamali
 		
+		
+		//get most powerful magic spell damage info
+		int maximum=(int)Utils.maximum(spellDamageInfo);
+		
+		
+		//use most powerful magic against to the boss  -- greedy approach
+		//maximize spellDamage ==== minimizeAttackNumber
+		//for every boss add attackNumber to spellUsed
+		for(float boss:bossHPs) {
+			
+			spellsUsed+=Utils.needAttackToDestroy(maximum, boss);
+			
+		}
+			
+	
+		
 		// ______ SON _______ Kodunuz burada bitmeli
 		/* NOT: ______ BASLANGIC _______ ve ______ SON _______ 
 		 * arasina istediginiz kadar sayida satir ekleyebilirsiniz.
 		 */
 		return spellsUsed;
 	}
+	
+	
+  
+
 	
 	public static String[] createSpellNameRepository() {
 		return new String[]{"Ice Storm", "Chain Lightning", "Magic Missile"};
