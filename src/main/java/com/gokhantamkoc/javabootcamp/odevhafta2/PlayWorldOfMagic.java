@@ -65,13 +65,13 @@ public class PlayWorldOfMagic implements CommandLineRunner {
 			
 		}
 			
-	
+		return spellsUsed;
 		
 		// ______ SON _______ Kodunuz burada bitmeli
 		/* NOT: ______ BASLANGIC _______ ve ______ SON _______ 
 		 * arasina istediginiz kadar sayida satir ekleyebilirsiniz.
 		 */
-		return spellsUsed;
+		
 	}
 	
 	
